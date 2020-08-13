@@ -22,4 +22,5 @@ urlpatterns = [
     path('rejestracja/', views.rejestracja, name='rejestracja'),
     path('zamowienie/', views.lista_zamowienia, name='lista_zamowienia'),
     path('wyloguj/', views.wyloguj, name='wyloguj'),
+    path('zaloguj/', views.logowanie, name='logowanie'),
 ]

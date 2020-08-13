@@ -51,3 +51,19 @@ def wyloguj(request):
     if request.method == 'POST':
         logout(request)
         return redirect('rejestracja')
+
+
+
+def logowanie(request):
+    if request.method == 'GET':
+        # Wyswietl Strone z logowaniem
+        return render(request, 'milosowisko_app/login.html')
+    else:
+        user = authenticate(request, username=request.POST['username'], password=request.POST['password'] )
+
+        if user is None:
+            return render(request, 'milosowisko_app/login.html', {'error':'złe hasło lub użytnik' })
+        
+        else:
+            login(request, user)
+            return redirect('lista_zamowienia')

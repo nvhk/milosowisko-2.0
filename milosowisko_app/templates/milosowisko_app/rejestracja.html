@@ -6,29 +6,36 @@
 
 
 <div class="container">
-    <h1 class="display-4">Rejestracja</h1>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            {% comment %} <h2>Login</h2> {% endcomment %}
+                <h1 class="display-4 text-center">Rejestracja</h1>
     <hr class="my-4">
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
 
 
 <form method="POST">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="username">Username</label>
+                    <label for="username">Login</label>
                     <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp">
-                    <small id="usernameHelp" class="form-text text-muted">Your username must be unique. We'll let you know if someone has taken it already.</small>
+                    <small id="usernameHelp" class="form-text text-muted">Login powinien będzie wyświetlany jako Ty na liście zamówień</small>
                 </div>
                 <div class="form-group">
-                    <label for="password1">Password</label>
+                    <label for="password1">Hasło</label>
                     <input type="password" name="password1" class="form-control" id="password1">
                 </div>
                 <div class="form-group">
-                    <label for="password2">Confirm Password</label>
+                    <label for="password2">Powtórz hasło</label>
                     <input type="password" name="password2" class="form-control" id="password2">
                 </div>
                 <button type="submit" class="btn btn-primary">Sign Up</button>
             </form>
                         {% if error %}
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger text-center" role="alert">
                     {{ error }}
                 </div>
             {% endif %}
@@ -36,19 +43,17 @@
             {% if sukces %}
             Udalo sie
             {% endif %}
+                    <hr>
+            <div class="text-center">
+                Masz już konto? <a href="{% url 'logowanie' %}">Zaloguj</a>
+            </div>
+        </div>
+    </div>
 
 
 
 
 </div>
-
-
-
-
-
-
-
-
 
 
 {% endblock tresc %}

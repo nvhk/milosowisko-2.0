@@ -1,0 +1,52 @@
+{% extends 'milosowisko_app/base.html' %}
+
+
+{% block tresc %}
+
+
+
+<div class="container">
+
+
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            {% comment %} <h2>Login</h2> {% endcomment %}
+                <h1 class="display-4 text-center">Login</h1>
+    <hr class="my-4">
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Login</label>
+                    <input type="text" name="username" class="form-control" id="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Hasło</label>
+                    <input type="password" name="password" class="form-control" id="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <hr>
+            <div class="text-center">
+                Nie masz konta? <a href="{% url 'rejestracja' %}">Zarejestruj sie</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+{% endblock tresc %}

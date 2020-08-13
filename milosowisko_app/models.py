@@ -11,8 +11,5 @@ class Zamowienie(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     wygrany = models.BooleanField(default=False)
 
-    
-    
-
     def __str__(self):
-        return self.title
+        return self.czasdodania
